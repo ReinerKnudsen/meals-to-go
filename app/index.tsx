@@ -1,27 +1,16 @@
-import { Text, View, StyleSheet, SafeAreaView, StatusBar } from 'react-native';
-import { Searchbar } from 'react-native-paper';
+import { StyleSheet, SafeAreaView, StatusBar } from 'react-native';
+import { RestaurantsScreen } from '../src/features/restaurants/screens/restaurants.screen';
 
 export default function Index() {
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.searchContainer}>
-        <Searchbar
-          style={styles.searchBar}
-          placeholder='Search'
-          value={''}
-          mode='view'
-          onChangeText={() => {}}
-        />
-      </View>
+      <RestaurantsScreen />
     </SafeAreaView>
   );
 }
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    marginTop: StatusBar.currentHeight,
   },
-  searchContainer: {
-    flex: 1,
-  },
-  searchBar: {},
 });
