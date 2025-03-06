@@ -1,15 +1,27 @@
-import { Text, View } from "react-native";
+import { Text, View, StyleSheet, SafeAreaView, StatusBar } from 'react-native';
+import { Searchbar } from 'react-native-paper';
 
 export default function Index() {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.searchContainer}>
+        <Searchbar
+          style={styles.searchBar}
+          placeholder='Search'
+          value={''}
+          mode='view'
+          onChangeText={() => {}}
+        />
+      </View>
+    </SafeAreaView>
   );
 }
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  searchContainer: {
+    flex: 1,
+  },
+  searchBar: {},
+});
