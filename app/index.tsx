@@ -1,6 +1,8 @@
 import { StyleSheet, SafeAreaView, StatusBar } from 'react-native';
 import { RestaurantsScreen } from '../src/features/restaurants/screens/restaurants.screen';
 import styled from 'styled-components';
+import { ThemeProvider } from 'styled-components/';
+import { theme } from '../src/infrastructure/theme';
 
 const SafeArea = styled(SafeAreaView)`
   flex: 1;
@@ -9,8 +11,10 @@ const SafeArea = styled(SafeAreaView)`
 
 export default function Index() {
   return (
-    <SafeArea>
-      <RestaurantsScreen />
-    </SafeArea>
+    <ThemeProvider theme={theme}>
+      <SafeArea>
+        <RestaurantsScreen />
+      </SafeArea>
+    </ThemeProvider>
   );
 }

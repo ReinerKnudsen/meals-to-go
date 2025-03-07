@@ -14,25 +14,24 @@ type RestaurantInfoProps = {
 };
 
 const RestaurantCard = styled(Card)`
-  elevation: 5;
-  background-color: white;
+  background-color: ${(props) => props.theme.colors.bg.primary};
 `;
 
 const RestaurantCardCover = styled(Card.Cover)`
-  padding: 5px;
-  background-color: white;
+  padding: ${(props) => props.theme.space.xs};
+  background-color: ${(props) => props.theme.colors.bg.primary};
 `;
 
 const Title = styled.Text`
-  font-size: 18px;
-  font-weight: 800;
-  padding: 5px;
+  font-size: ${(props) => props.theme.fontSizes.title};
+  font-weight: ${(props) => props.theme.fontWeights.bold};
+  padding: ${(props) => props.theme.space.xs};
 `;
 
 const Address = styled.Text`
-  font-size: 14px;
-  padding: 5px;
-  background-color: blue;
+  font-size: ${(props) => props.theme.fontSizes.body};
+  padding: ${(props) => props.theme.space.xs};
+  background-color: ${(props) => props.theme.colors.bg.primary};
 `;
 
 export const RestaurantInfoCard = ({ restaurant = {} }: RestaurantInfoProps) => {
@@ -48,7 +47,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }: RestaurantInfoProps) => 
 
   return (
     <>
-      <RestaurantCard>
+      <RestaurantCard elevation={5}>
         <RestaurantCardCover
           key={name}
           source={{

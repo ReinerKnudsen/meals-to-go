@@ -3,11 +3,12 @@ import { RestaurantInfoCard } from '../components/restaurant-info.card';
 import styled from 'styled-components';
 
 const SearchContainer = styled.View`
-  padding: 10px;
+  padding: ${(props) => props.theme.space.sm};
 `;
 
+// the props is a prop of the styled components
 const SearchBar = styled(Searchbar)`
-  padding: 0px;
+  padding: ${(props) => props.theme.space.none};
 `;
 
 const RestaurantsList = styled.View`
