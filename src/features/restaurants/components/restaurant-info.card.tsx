@@ -23,15 +23,19 @@ const RestaurantCardCover = styled(Card.Cover)`
 `;
 
 const Title = styled.Text`
+  font-family: ${(props) => props.theme.fonts.heading};
   font-size: ${(props) => props.theme.fontSizes.title};
   font-weight: ${(props) => props.theme.fontWeights.bold};
-  padding: ${(props) => props.theme.space.xs};
 `;
 
 const Address = styled.Text`
-  font-size: ${(props) => props.theme.fontSizes.body};
-  padding: ${(props) => props.theme.space.xs};
+  font-size: ${(props) => props.theme.fontSizes.caption};
+  font-family: ${(props) => props.theme.fonts.body};
   background-color: ${(props) => props.theme.colors.bg.primary};
+`;
+
+const Info = styled.View`
+  padding: ${(props) => props.theme.space.xs};
 `;
 
 export const RestaurantInfoCard = ({ restaurant = {} }: RestaurantInfoProps) => {
@@ -55,8 +59,10 @@ export const RestaurantInfoCard = ({ restaurant = {} }: RestaurantInfoProps) => 
           }}
         />
         <Card.Content>
-          <Title>{name}</Title>
-          <Address>{address}</Address>
+          <Info>
+            <Title>{name}</Title>
+            <Address>{address}</Address>
+          </Info>
         </Card.Content>
       </RestaurantCard>
     </>
